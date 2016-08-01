@@ -27,3 +27,5 @@ accounts-github
 accounts-google
 ian:accounts-ui-bootstrap-3
 audit-argument-checks
+check
+ejson
