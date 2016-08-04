@@ -1,6 +1,6 @@
 if (Posts.find().count() === 0) {
-  var nov= new Date().getTime();
-  var tomId =  meteor.users.insert({
+  var now= new Date().getTime();
+  var tomId =  Meteor.users.insert({
     profile: {name: 'Tom Coleman'}
   });
   var tom = Meteor.users.findOne(tomId);
@@ -21,7 +21,7 @@ if (Posts.find().count() === 0) {
     postId: telescopeId,
     userId: tom._id,
     author: tom.profile.name,
-    submitted: newDate(now-5*3600*1000),
+    submitted: new Date(now-5*3600*1000),
     body: 'Interesting project Sacha, can I get involved?'
   });
   
@@ -29,7 +29,7 @@ if (Posts.find().count() === 0) {
     postId: telescopeId,
     userId: sacha._id,
     author: sacha.profile.name,
-    submitted: new date(now-3*3600*1000),
+    submitted: new Date(now-3*3600*1000),
     body: 'You sure can Tom!'
   });
   
