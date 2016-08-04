@@ -10,8 +10,7 @@ Template.postSubmit.events({
     Meteor.call('postInsert', post, function(error,result){
         if (error){
 			throwError(error.reason);
-			if(error.error===302)
-alert("fff");				
+			if(error.error===302)				
 				Router.go('postPage',{_id: error.details})		
 		}else{
 			Router.go('postPage',{_id: result._id});
